@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>
+			Moshe and Baila
+		</title>
+
+		<script type="text/javascript" src="http://mosheberman.com/scripts/jquery172.js"></script>
+		<script type="text/javascript" src="js/moment.js"></script>		
+		<script type="text/javascript" src="js/moment-timezone.js"></script>		
+		<script type="text/javascript" src="js/countdown.js"></script>
+
+		<script type="text/javascript">
+
+			function pairsOfStringFromNumber(number) {
+
+				var input = parseInt(number).toString();
+
+				// limit to only 2 characters
+
+
+				var output = input.split('');
+
+				if (output.length == 1) {
+					output.unshift("0");
+				};
+
+				return output;
+			}
+
+			$(document).ready(
+			function(){
+
+					moment.utcOffset
+					var wedding = moment("2015-09-07 18:30");
+					wedding.tz("America/New_York");
+
+					$('#panels').countdown(wedding.toDate()).on('update.countdown', function(time){ 
+
+							var dayLeft = pairsOfStringFromNumber(time.offset.totalDays);
+							var hrsLeft = pairsOfStringFromNumber(time.offset.hours);
+							var minutes = pairsOfStringFromNumber(time.offset.minutes);
+							var seconds = pairsOfStringFromNumber(time.offset.seconds);
+
+							$("#tens-days").text(dayLeft[0]);
+							$("#ones-days").text(dayLeft[1]);
+
+							$("#tens-hours").text(hrsLeft[0]);
+							$("#ones-hours").text(hrsLeft[1]);
+
+							$("#tens-minutes").text(minutes[0]);
+							$("#ones-minutes").text(minutes[1]);
+
+							$("#tens-seconds").text(seconds[0]);
+							$("#ones-seconds").text(seconds[1]);
+					});
+			});
+
+		</script>
+
+		<style>
+			@import "css/teal.css";
+		</style>
+
+	</head>
+	<body>
+		<div id="status-bar">
+			<span id="status-center">Moshe &amp; Baila's Wedding</span>
+		</div>
+		<div id="photographs">
+			<img src="img/krispykreme.png" class="photo" />
+			<img src="img/goldengate.png" class="photo center" />
+			<img src="img/park.png" class="photo" />
+		</div>
+		<div id="countdown-wrapper">
+			<div id="panels">
+				<div class="panel left-panel" id="tens-days">0</div>
+				<div class="panel" id="ones-days">0</div>
+				<div class="panel tens-panel" id="tens-hours">0</div>
+				<div class="panel" id="ones-hours">0</div>
+				<div class="panel tens-panel" id="tens-minutes">0</div>
+				<div class="panel" id="ones-minutes">0</div>
+				<div class="panel tens-panel" id="tens-seconds">0</div>
+				<div class="panel" id="ones-seconds">0</div>
+			</div>
+			<div class="countdown-label">days</div>
+			<div class="countdown-label">hours</div>
+			<div class="countdown-label">minutes</div>
+			<div class="countdown-label">seconds</div>
+		</div>
+
+		<script type="text/javascript" src="http://mosheberman.com/scripts/retina.js"></script>	
+	</body>
+</html>
