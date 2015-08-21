@@ -22,7 +22,8 @@ body {
 	background-color: #fff;
 	color: #02828f;
 	font-size: 12pt;
-	padding: 5px;
+	padding-top: 5px;
+	padding-bottom:5px;
 	width: 100%;
 	line-height: 34px;
 	vertical-align: middle;
@@ -36,12 +37,16 @@ body {
 	float: right;
 }
 
-#status-bar a {
-	color: #02828f;
-	padding-left: 5px;
-	padding-right: 5px;
+#status-bar .small-gray {
+	font-size: 12px;
+	color: #d9d9d9;
 }
 
+#status-bar a {
+	color: #02828f;
+	padding-left: 15px;
+	padding-right: 15px;
+}
 
 #photographs {
 	text-align: center;
